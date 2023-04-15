@@ -15,6 +15,7 @@ public class PlayerWalk : MonoBehaviour
     public GameObject camAnimRig;
     public Vector3 hDir, vDir, movement;
     public bool isCrouching;
+    public bool isRunning;
     public bool isWalkingEnabled = true;
     public float walkCheckDist = .5f;
     public PlayerFrontCheck pfc;
@@ -103,10 +104,12 @@ public class PlayerWalk : MonoBehaviour
             Input.GetAxis("Vertical") > 0)
         {
             currentSpeed = dashSpeed;
+            isRunning = true;
         }
         else
         {
             currentSpeed = walkSpeed;
+            isRunning = false;
         }
     }
     
