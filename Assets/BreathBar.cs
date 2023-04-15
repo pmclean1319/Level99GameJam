@@ -40,13 +40,13 @@ public class BreathBar : MonoBehaviour
             breathLoss = Time.deltaTime * BreathLossRate;
 
         GetComponent<Slider>().value -= breathLoss;
-        float breathPercentage = Mathf.Round(GetComponent<Slider>().value * 100 * 4 / 3);
-        BreathPercentageText.text = breathPercentage.ToString() + "%";
+        float breathPercentage = GetComponent<Slider>().value * 100 * 4 / 3;
+        BreathPercentageText.text = Mathf.Round(breathPercentage).ToString() + "%";
 
         if(breathPercentage <= 50)
         {
             ScreenVignette.intensity.value = (50-breathPercentage) / 50;
-            ScreenDoF.focalLength.value = (50-breathPercentage) / 50 * 300;
+            ScreenDoF.focusDistance.value = breathPercentage;
         }
     }
 }
