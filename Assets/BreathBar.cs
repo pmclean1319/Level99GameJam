@@ -6,7 +6,6 @@ using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
-
 public class BreathBar : MonoBehaviour
 {
     public float CrouchingBreathLossRate = .05f;
@@ -37,7 +36,6 @@ public class BreathBar : MonoBehaviour
         ScreenDoF = ScreenVolume.profile.GetSetting<DepthOfField>();
         audioSource = GetComponent<AudioSource>();
         audioSource.loop = true;
-
     }
 
     // Update is called once per frame
