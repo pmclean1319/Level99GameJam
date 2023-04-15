@@ -24,10 +24,12 @@ public class BreathBar : MonoBehaviour
     {
         float breathLoss = 0;
 
-        if (PlayerWalkScript.isRunning)
-            breathLoss = Time.deltaTime * RunningBreathLossRate;
+        if (!PlayerJumpScript.isEarthBound)
+            breathLoss = Time.deltaTime * ClimbingBreathLossRate;
         else if(PlayerWalkScript.isCrouching)
             breathLoss = Time.deltaTime * CrouchingBreathLossRate;
+        else if(PlayerWalkScript.isRunning)
+            breathLoss = Time.deltaTime * RunningBreathLossRate;
         else
             breathLoss = Time.deltaTime * BreathLossRate;
 
