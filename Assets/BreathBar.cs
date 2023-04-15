@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
 
 public class BreathBar : MonoBehaviour
@@ -13,10 +14,15 @@ public class BreathBar : MonoBehaviour
     public TextMeshProUGUI BreathPercentageText;
     public PlayerWalk PlayerWalkScript;
     public PlayerJump PlayerJumpScript;
+    public PostProcessVolume ScreenVolume;
+    private Vignette ScreenVignette;
+    private DepthOfField ScreenDoF;
 
     // Start is called before the first frame update
     void Start()
     {
+        ScreenVignette = ScreenVolume.profile.GetSetting<Vignette>();
+        ScreenDoF = ScreenVolume.profile.GetSetting<DepthOfField>();
     }
 
     // Update is called once per frame
@@ -33,8 +39,14 @@ public class BreathBar : MonoBehaviour
         else
             breathLoss = Time.deltaTime * BreathLossRate;
 
-
         GetComponent<Slider>().value -= breathLoss;
-        BreathPercentageText.text = Mathf.Round(GetComponent<Slider>().value * 100 * 4/3).ToString() + "%";
+        float breathPercentage = Mathf.Round(GetComponent<Slider>().value * 100 * 4 / 3);
+        BreathPercentageText.text = breathPercentage.ToString() + "%";
+
+        if(breathPercentage <= 50)
+        {
+            ScreenVignette.intensity.value = (50-breathPercentage) / 50;
+            ScreenDoF.focalLength.value = (50-breathPercentage) / 50 * 300;
+        }
     }
 }
