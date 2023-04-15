@@ -16,6 +16,7 @@ public class PlayerWalk : MonoBehaviour
     public Vector3 hDir, vDir, movement;
     public bool isCrouching;
     public bool isRunning;
+    public bool isWalking;
     public bool isWalkingEnabled = true;
     public float walkCheckDist = .5f;
     public PlayerFrontCheck pfc;
@@ -75,13 +76,6 @@ public class PlayerWalk : MonoBehaviour
         GetComponent<Rigidbody>().velocity = new Vector3(movement.x * currentSpeed, GetComponent<Rigidbody>().velocity.y, movement.z * currentSpeed);
 
 
-
-
-        if (movement != new Vector3(0, 0, 0))
-        {
-
-        }
-
         //Steps, vaults, and ledges
         if ((pfc.inFront == "step") //|| pfc.inFront == "vaultable") 
             && ((Input.GetAxisRaw("Vertical") != 0)
@@ -96,6 +90,8 @@ public class PlayerWalk : MonoBehaviour
         {
             transform.position += transform.up * (stepSpeed/2);
         }
+
+        isWalking = movement != Vector3.zero && !isRunning;
     }
     public void Dash()
     {
