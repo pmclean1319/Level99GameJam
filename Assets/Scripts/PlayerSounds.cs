@@ -8,6 +8,7 @@ public class PlayerSounds : MonoBehaviour
 {
     [SerializeField] AudioClip walkingFootsteps;
     [SerializeField] AudioClip runningFootsteps;
+    [SerializeField] AudioClip jumpSound;
     [SerializeField] AudioClip jumpLandingSound;
 
     AudioSource footstepsAudioSource;
@@ -21,10 +22,10 @@ public class PlayerSounds : MonoBehaviour
         footstepsAudioSource = gameObject.AddComponent<AudioSource>();
         footstepsAudioSource.loop = true;
         jumpLandingAudioSource = gameObject.AddComponent<AudioSource>();
-        jumpLandingAudioSource.clip = jumpLandingSound;
         // Setup player movement components.
         playerWalk = GetComponent<PlayerWalk>();
         playerJump = GetComponent<PlayerJump>();
+        playerJump.Jumped += PlayerJumped;
         playerJump.Landed += PlayerLanded;
     }
 
@@ -51,12 +52,20 @@ public class PlayerSounds : MonoBehaviour
                 footstepsAudioSource.clip = newSound;
                 footstepsAudioSource.Play();
             }
-        } 
+        }
+    }
+    void PlayerJumped()
+    {
+        jumpLandingAudioSource.Stop();
+        jumpLandingAudioSource.clip = jumpSound;
+        jumpLandingAudioSource.Play();
     }
 
     void PlayerLanded(float fallDuration)
     {
         if (fallDuration > 1) { // Ignore trivially short falls; don't play audio for them.
+            jumpLandingAudioSource.Stop();
+            jumpLandingAudioSource.clip = jumpLandingSound;
             jumpLandingAudioSource.Play();
         }
     }

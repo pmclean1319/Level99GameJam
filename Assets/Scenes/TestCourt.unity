@@ -387,6 +387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkingFootsteps: {fileID: 8300000, guid: 7fa14993fa9c7374099eef739b153ec8, type: 3}
   runningFootsteps: {fileID: 8300000, guid: 4efcdf63d1faa0041bd51ed48d512607, type: 3}
+  jumpSound: {fileID: 8300000, guid: 83aed9672bc36284ea0e811859829b4c, type: 3}
   jumpLandingSound: {fileID: 8300000, guid: cdfad8be63ad8c740b9e7723fa79b3da, type: 3}
 --- !u!1 &1164584708
 GameObject:
