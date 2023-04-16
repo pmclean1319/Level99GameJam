@@ -28,6 +28,7 @@ public class BreathBar : MonoBehaviour
     private AudioClip currentAudio;
     /// <summary>Indicates whether an audio fade-out is in progress. Prevents multiple coroutines from running simultaneously.</summary>
     private bool isFading;
+    private bool jumpedSinceLastUpdate = false;
     private Grain ScreenGrain;
 
     // Start is called before the first frame update
@@ -38,6 +39,13 @@ public class BreathBar : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.loop = true;
         ScreenGrain = ScreenVolume.profile.GetSetting<Grain>();
+
+        PlayerJumpScript.Jumped += PlayerJumpScript_Jumped;
+    }
+
+    private void PlayerJumpScript_Jumped()
+    {
+        jumpedSinceLastUpdate = true;
     }
 
     // Update is called once per frame
@@ -47,17 +55,29 @@ public class BreathBar : MonoBehaviour
         AudioClip breathingAudio = null;
 
         if (!PlayerJumpScript.isEarthBound) {
-            breathLoss = Time.deltaTime * ClimbingBreathLossRate;
-            breathingAudio = fastBreathing;
+            if (jumpedSinceLastUpdate)
+            {
+                breathLoss = Time.deltaTime * ClimbingBreathLossRate;
+                breathingAudio = fastBreathing;
+                jumpedSinceLastUpdate = false;
+            }
+            else
+            {
+                breathLoss = Time.deltaTime * CrouchingBreathLossRate;
+                breathingAudio = slowBreathing;
+            }
         } else if (PlayerWalkScript.isCrouching) {
             breathLoss = Time.deltaTime * CrouchingBreathLossRate;
             breathingAudio = slowBreathing;
         } else if (PlayerWalkScript.isRunning) {
             breathLoss = Time.deltaTime * RunningBreathLossRate;
             breathingAudio = fastBreathing;
-        } else {
+        } else if (PlayerWalkScript.isWalking){
             breathLoss = Time.deltaTime * BreathLossRate;
             breathingAudio = normalBreathing;
+        }else {
+            breathLoss = Time.deltaTime * CrouchingBreathLossRate;
+            breathingAudio = slowBreathing;
         }
 
         GetComponent<Slider>().value -= breathLoss;
