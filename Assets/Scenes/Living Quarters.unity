@@ -182,6 +182,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d1539564190f784faadab27b15f200d, type: 3}
+--- !u!1 &132874865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3948260975569105191, guid: 2d1539564190f784faadab27b15f200d, type: 3}
+  m_PrefabInstance: {fileID: 132874864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &132874866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132874865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a0cf99df0de9a04fb486116b0e1cb5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkingFootsteps: {fileID: 8300000, guid: 7fa14993fa9c7374099eef739b153ec8, type: 3}
+  runningFootsteps: {fileID: 8300000, guid: 4efcdf63d1faa0041bd51ed48d512607, type: 3}
+  jumpSound: {fileID: 8300000, guid: 83aed9672bc36284ea0e811859829b4c, type: 3}
+  jumpLandingSound: {fileID: 8300000, guid: cdfad8be63ad8c740b9e7723fa79b3da, type: 3}
+  slowBreathing: {fileID: 8300000, guid: 607b0577fd8f5ad49a78af2bd717ca56, type: 3}
+  normalBreathing: {fileID: 8300000, guid: 2c4a8cdbe39ea7d4a8ecfeaebfdacccb, type: 3}
+  fastBreathing: {fileID: 8300000, guid: 171f7a8b398d3374caead2e640590c9c, type: 3}
 --- !u!850595691 &1024350662
 LightingSettings:
   m_ObjectHideFlags: 0

@@ -755,6 +755,9 @@ MonoBehaviour:
   runningFootsteps: {fileID: 8300000, guid: 4efcdf63d1faa0041bd51ed48d512607, type: 3}
   jumpSound: {fileID: 8300000, guid: 83aed9672bc36284ea0e811859829b4c, type: 3}
   jumpLandingSound: {fileID: 8300000, guid: cdfad8be63ad8c740b9e7723fa79b3da, type: 3}
+  slowBreathing: {fileID: 8300000, guid: 607b0577fd8f5ad49a78af2bd717ca56, type: 3}
+  normalBreathing: {fileID: 8300000, guid: 2c4a8cdbe39ea7d4a8ecfeaebfdacccb, type: 3}
+  fastBreathing: {fileID: 8300000, guid: 171f7a8b398d3374caead2e640590c9c, type: 3}
 --- !u!1 &859800753
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,7 +976,7 @@ MonoBehaviour:
   PlayerJumpScript: {fileID: 768640224}
   ScreenVolume: {fileID: 2123315974}
   slowBreathing: {fileID: 0}
-  normalBreathing: {fileID: 0}
+  normalBreathing: {fileID: 8300000, guid: 2c4a8cdbe39ea7d4a8ecfeaebfdacccb, type: 3}
   fastBreathing: {fileID: 0}
 --- !u!82 &1010080756
 AudioSource:
@@ -2918,7 +2921,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2076293421}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &2076293423
 Camera:
   m_ObjectHideFlags: 0
