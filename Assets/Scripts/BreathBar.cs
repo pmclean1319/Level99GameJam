@@ -19,7 +19,6 @@ public class BreathBar : MonoBehaviour
     public PostProcessVolume ScreenVolume;
     private Vignette ScreenVignette;
     private DepthOfField ScreenDoF;
-<<<<<<< Updated upstream:Assets/BreathBar.cs
     private AudioSource audioSource;
 
     public AudioClip slowBreathing;
@@ -29,21 +28,16 @@ public class BreathBar : MonoBehaviour
     private AudioClip currentAudio;
     /// <summary>Indicates whether an audio fade-out is in progress. Prevents multiple coroutines from running simultaneously.</summary>
     private bool isFading;
-=======
     private Grain ScreenGrain;
->>>>>>> Stashed changes:Assets/Scripts/BreathBar.cs
 
     // Start is called before the first frame update
     void Start()
     {
         ScreenVignette = ScreenVolume.profile.GetSetting<Vignette>();
         ScreenDoF = ScreenVolume.profile.GetSetting<DepthOfField>();
-<<<<<<< Updated upstream:Assets/BreathBar.cs
         audioSource = GetComponent<AudioSource>();
         audioSource.loop = true;
-=======
         ScreenGrain = ScreenVolume.profile.GetSetting<Grain>();
->>>>>>> Stashed changes:Assets/Scripts/BreathBar.cs
     }
 
     // Update is called once per frame
