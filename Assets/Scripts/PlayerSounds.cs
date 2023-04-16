@@ -4,6 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(PlayerWalk))]
 [RequireComponent(typeof(PlayerJump))]
+[RequireComponent(typeof(PlayerFrontCheck))]
 public class PlayerSounds : MonoBehaviour
 {
     [SerializeField] AudioClip walkingFootsteps;
@@ -13,6 +14,7 @@ public class PlayerSounds : MonoBehaviour
 
     AudioSource footstepsAudioSource;
     AudioSource jumpLandingAudioSource;
+    PlayerFrontCheck playerFrontCheck;
     PlayerWalk playerWalk;
     PlayerJump playerJump;
 
@@ -23,6 +25,7 @@ public class PlayerSounds : MonoBehaviour
         footstepsAudioSource.loop = true;
         jumpLandingAudioSource = gameObject.AddComponent<AudioSource>();
         // Setup player movement components.
+        playerFrontCheck = GetComponent<PlayerFrontCheck>();
         playerWalk = GetComponent<PlayerWalk>();
         playerJump = GetComponent<PlayerJump>();
         playerJump.Jumped += PlayerJumped;
@@ -56,9 +59,11 @@ public class PlayerSounds : MonoBehaviour
     }
     void PlayerJumped()
     {
-        jumpLandingAudioSource.Stop();
-        jumpLandingAudioSource.clip = jumpSound;
-        jumpLandingAudioSource.Play();
+        if (playerFrontCheck.inFront != "wall") { // "Jumping" on a wall = climbing
+            jumpLandingAudioSource.Stop();
+            jumpLandingAudioSource.clip = jumpSound;
+            jumpLandingAudioSource.Play();
+        }
     }
 
     void PlayerLanded(float fallDuration)
