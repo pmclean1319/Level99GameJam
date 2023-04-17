@@ -31,11 +31,11 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _Scroll_Speed: 0.02
+    - _Scroll_Speed: 0.05
     m_Colors:
     - _Fresnel_Color: {r: 3.02282, g: 3.02282, b: 3.02282, a: 1}
-    - _Hologram_Tiling: {r: 64, g: 64, b: 0, a: 0}
-    - _Main_Color: {r: 3.3882353, g: 3.2627451, b: 5.4588237, a: 0.41960785}
+    - _Hologram_Tiling: {r: 16, g: 16, b: 0, a: 0}
+    - _Main_Color: {r: 0.21176471, g: 0.20392157, b: 0.34117648, a: 0.5529412}
   m_BuildTextureStacks: []
 --- !u!114 &3829026829051162829
 MonoBehaviour:

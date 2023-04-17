@@ -13,6 +13,7 @@ public class BreathBar : MonoBehaviour
     public float RunningBreathLossRate = .2f;
     public float ClimbingBreathLossRate = .2f;
     public float AudioFadeOutDuration = 0.5f;
+    public Image Bar;
     public TextMeshProUGUI BreathPercentageText;
     public PlayerWalk PlayerWalkScript;
     public PlayerJump PlayerJumpScript;
@@ -79,14 +80,18 @@ public class BreathBar : MonoBehaviour
                 breathLoss = Time.deltaTime * CrouchingBreathLossRate;
             }
 
-            GetComponent<Slider>().value -= breathLoss;
+
+            Bar.fillAmount -= breathLoss;
         }
         else
         {
-            GetComponent<Slider>().value += Time.deltaTime * .5f;
+            if (Bar.fillAmount + Time.deltaTime * .5f > .75f)
+                Bar.fillAmount = .75f;
+            else
+                Bar.fillAmount += Time.deltaTime * .5f;
         }
 
-        float breathPercentage = GetComponent<Slider>().value * 100 * 4 / 3;
+        float breathPercentage = Bar.fillAmount * 100 * 4 / 3;
         BreathPercentageText.text = Mathf.Round(breathPercentage).ToString() + "%";
 
         if(breathPercentage <= 50)
