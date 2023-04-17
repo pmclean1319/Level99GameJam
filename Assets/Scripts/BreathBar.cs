@@ -19,15 +19,7 @@ public class BreathBar : MonoBehaviour
     public PostProcessVolume ScreenVolume;
     private Vignette ScreenVignette;
     private DepthOfField ScreenDoF;
-    private AudioSource audioSource;
 
-    public AudioClip slowBreathing;
-    public AudioClip normalBreathing; 
-    public AudioClip fastBreathing;
-    /// <summary>Indicates which breathing sound is currently playing (or slated to start playing after the fade-out).</summary>
-    private AudioClip currentAudio;
-    /// <summary>Indicates whether an audio fade-out is in progress. Prevents multiple coroutines from running simultaneously.</summary>
-    private bool isFading;
     private bool jumpedSinceLastUpdate = false;
     private Grain ScreenGrain;
 
@@ -36,8 +28,6 @@ public class BreathBar : MonoBehaviour
     {
         ScreenVignette = ScreenVolume.profile.GetSetting<Vignette>();
         ScreenDoF = ScreenVolume.profile.GetSetting<DepthOfField>();
-        audioSource = GetComponent<AudioSource>();
-        audioSource.loop = true;
         ScreenGrain = ScreenVolume.profile.GetSetting<Grain>();
 
         PlayerJumpScript.Jumped += PlayerJumpScript_Jumped;
@@ -51,33 +41,26 @@ public class BreathBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float breathLoss = 0;
-        AudioClip breathingAudio = null;
+        float breathLoss = 0; 
 
         if (!PlayerJumpScript.isEarthBound) {
             if (jumpedSinceLastUpdate)
             {
-                breathLoss = Time.deltaTime * ClimbingBreathLossRate;
-                breathingAudio = fastBreathing;
+                breathLoss = Time.deltaTime * ClimbingBreathLossRate; 
                 jumpedSinceLastUpdate = false;
             }
             else
             {
-                breathLoss = Time.deltaTime * CrouchingBreathLossRate;
-                breathingAudio = slowBreathing;
+                breathLoss = Time.deltaTime * CrouchingBreathLossRate; 
             }
         } else if (PlayerWalkScript.isCrouching) {
-            breathLoss = Time.deltaTime * CrouchingBreathLossRate;
-            breathingAudio = slowBreathing;
+            breathLoss = Time.deltaTime * CrouchingBreathLossRate; 
         } else if (PlayerWalkScript.isRunning) {
-            breathLoss = Time.deltaTime * RunningBreathLossRate;
-            breathingAudio = fastBreathing;
+            breathLoss = Time.deltaTime * RunningBreathLossRate; 
         } else if (PlayerWalkScript.isWalking){
-            breathLoss = Time.deltaTime * BreathLossRate;
-            breathingAudio = normalBreathing;
+            breathLoss = Time.deltaTime * BreathLossRate; 
         }else {
-            breathLoss = Time.deltaTime * CrouchingBreathLossRate;
-            breathingAudio = slowBreathing;
+            breathLoss = Time.deltaTime * CrouchingBreathLossRate; 
         }
 
         GetComponent<Slider>().value -= breathLoss;
@@ -89,35 +72,6 @@ public class BreathBar : MonoBehaviour
             ScreenVignette.intensity.value = (50-breathPercentage) / 50;
             ScreenGrain.intensity.value = (50 - breathPercentage) / 50;
             //ScreenDoF.focusDistance.value = breathPercentage;
-        }
-
-        if (breathingAudio != currentAudio) {
-            currentAudio = breathingAudio;
-            StartCoroutine(FadeOutAndSwitchAudio());
-        }
-    }
-
-    /// <summary>
-    /// Switches the audio by fading out the currently-playing clip and then starting the new clip.
-    /// </summary>
-    private IEnumerator FadeOutAndSwitchAudio()
-    {
-        if (!isFading) {
-            isFading = true;
-            float startVolume = audioSource.volume;
-
-            // Fade out
-            while (audioSource.volume > 0) {
-                audioSource.volume -= startVolume * Time.deltaTime / AudioFadeOutDuration;
-                yield return null;
-            }
-            // Stop and switch the audio clip
-            audioSource.Stop();
-            audioSource.clip = currentAudio;
-            audioSource.volume = startVolume;
-            audioSource.Play();
-
-            isFading = false;
         }
     }
 }
