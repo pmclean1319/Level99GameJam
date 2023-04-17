@@ -27,7 +27,11 @@ public class InteractionRay : MonoBehaviour
         {
             if (info.collider.gameObject.GetComponent<InteractiveComponent>() != null)
             {
-                dispField.text = info.collider.gameObject.GetComponent<InteractiveComponent>().interText;
+                if (dispField != null)
+                {
+                    dispField.text = info.collider.gameObject.GetComponent<InteractiveComponent>().interText;
+                }
+
                 if (Input.GetButton("Interact"))
                 {
                     CallActivation(info.collider.gameObject);
@@ -36,12 +40,14 @@ public class InteractionRay : MonoBehaviour
             }
             else
             {
+                if (dispField != null)
                 dispField.text = "";
             }
         }
         else
         {
-            dispField.text = "";
+            if (dispField != null)
+                dispField.text = "";
         }
     }
 
