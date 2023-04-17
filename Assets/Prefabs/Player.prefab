@@ -452,7 +452,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0cf99df0de9a04fb486116b0e1cb5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioFadeOutDuration: 0.15
   walkingFootsteps: {fileID: 8300000, guid: 7fa14993fa9c7374099eef739b153ec8, type: 3}
   runningFootsteps: {fileID: 8300000, guid: 4efcdf63d1faa0041bd51ed48d512607, type: 3}
   jumpSound: {fileID: 8300000, guid: 83aed9672bc36284ea0e811859829b4c, type: 3}
@@ -460,6 +459,8 @@ MonoBehaviour:
   slowBreathing: {fileID: 8300000, guid: 607b0577fd8f5ad49a78af2bd717ca56, type: 3}
   normalBreathing: {fileID: 8300000, guid: 2c4a8cdbe39ea7d4a8ecfeaebfdacccb, type: 3}
   fastBreathing: {fileID: 8300000, guid: 171f7a8b398d3374caead2e640590c9c, type: 3}
+  oxygenMusic: {fileID: 8300000, guid: 1578584f2ddada041a0562e0c262a553, type: 3}
+  noOxygenMusic: {fileID: 8300000, guid: f170ad1a720db6c48864dd2cdf0b821a, type: 3}
 --- !u!1 &3948260975688250648
 GameObject:
   m_ObjectHideFlags: 0

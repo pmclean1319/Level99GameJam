@@ -14,22 +14,30 @@ public class PlayerSounds : MonoBehaviour
     [SerializeField] AudioClip slowBreathing;
     [SerializeField] AudioClip normalBreathing;
     [SerializeField] AudioClip fastBreathing;
+    [SerializeField] AudioClip oxygenMusic;
+    [SerializeField] AudioClip noOxygenMusic;
+
+    [SerializeField] float musicVolume;
+    [SerializeField] float effectsVolume;
 
     AudioSource footstepsAudioSource;
     AudioSource jumpLandingAudioSource;
     AudioSource breathingAudioSource;
+    AudioSource musicAudioSource;
     PlayerFrontCheck playerFrontCheck;
     PlayerWalk playerWalk;
     PlayerJump playerJump;
     Dictionary<AudioSource, AudioClip> queuedSound = new Dictionary<AudioSource, AudioClip>();
     Dictionary<AudioSource, float> fadeDuration = new Dictionary<AudioSource, float>();
+    Dictionary<AudioSource, float> maxVolume = new Dictionary<AudioSource, float>();
 
     void Start()
     {
         // Setup audio sources.
-        jumpLandingAudioSource = createAudioSource("JumpLandingAudio", false, 0f);
-        footstepsAudioSource = createAudioSource("FootstepsAudio", true, 0.15f);
-        breathingAudioSource = createAudioSource("BreathingAudio", true, 0.75f);
+        jumpLandingAudioSource = createAudioSource("JumpLandingAudio", false, 0f, effectsVolume);
+        footstepsAudioSource = createAudioSource("FootstepsAudio", true, 0.15f, effectsVolume);
+        breathingAudioSource = createAudioSource("BreathingAudio", true, 0.75f, effectsVolume);
+        musicAudioSource = createAudioSource("MusicAudio", true, 1.25f, musicVolume);
         // Setup player movement components.
         playerFrontCheck = GetComponent<PlayerFrontCheck>();
         playerWalk = GetComponent<PlayerWalk>();
@@ -38,13 +46,14 @@ public class PlayerSounds : MonoBehaviour
         playerJump.Landed += PlayerLanded;
     }
 
-    AudioSource createAudioSource(string name, bool loop, float fadeOutDuration)
+    AudioSource createAudioSource(string name, bool loop, float fadeOutDuration, float sourceMaxVolume)
     {
         GameObject audioContainer = new GameObject(name);
         audioContainer.transform.parent = gameObject.transform;
         AudioSource audioSource = audioContainer.AddComponent<AudioSource>();
         audioSource.loop = loop;
         fadeDuration[audioSource] = fadeOutDuration;
+        maxVolume[audioSource] = sourceMaxVolume;
         return audioSource;
     }
     void PlayerJumped()
@@ -69,6 +78,7 @@ public class PlayerSounds : MonoBehaviour
     {
         ToggleFootstepSounds();
         ToggleBreathingSounds();
+        ToggleMusic();
         UpdateQueuedSounds();
     }
 
@@ -98,16 +108,22 @@ public class PlayerSounds : MonoBehaviour
         SetSound(breathingAudioSource, newSound);
     }
 
+    void ToggleMusic()
+    {
+        SetSound(musicAudioSource, oxygenMusic);
+    }
+
     void SetSound(AudioSource audioSource, AudioClip newSound)
     {
         if (audioSource.clip == null) {
             audioSource.clip = newSound;
             audioSource.Play();
+            audioSource.volume = maxVolume[audioSource];
         } else if (audioSource.clip == newSound) {
             if (queuedSound.ContainsKey(audioSource)) {
                 // Sound was fading out -- cancel that.
                 queuedSound.Remove(audioSource);
-                audioSource.volume = 1;
+                audioSource.volume = maxVolume[audioSource];
 
             }
         } else { // Current clip is wrong; start fadeout.
@@ -119,7 +135,7 @@ public class PlayerSounds : MonoBehaviour
     {
         List<AudioSource> audioSourcesToRemove = new List<AudioSource>();
         foreach (AudioSource audioSource in queuedSound.Keys) {
-            float volumeDecrease = Time.deltaTime / fadeDuration[audioSource];
+            float volumeDecrease = Time.deltaTime / fadeDuration[audioSource] / maxVolume[audioSource];
             audioSource.volume -= volumeDecrease;
             if (audioSource.volume <= 0) { 
                 audioSourcesToRemove.Add(audioSource);
@@ -128,9 +144,9 @@ public class PlayerSounds : MonoBehaviour
         foreach (AudioSource audioSource in audioSourcesToRemove) {
             AudioClip newClip;
             queuedSound.Remove(audioSource, out newClip);
-            audioSource.volume = 1;
+            audioSource.volume = maxVolume[audioSource];
             audioSource.clip = newClip;
             audioSource.Play();
         }
-    } 
+    }
 }
