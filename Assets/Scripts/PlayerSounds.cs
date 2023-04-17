@@ -32,7 +32,6 @@ public class PlayerSounds : MonoBehaviour
         jumpLandingAudioSource = createAudioSource("JumpLandingAudio", false, 0f);
         footstepsAudioSource = createAudioSource("FootstepsAudio", true, 0.15f);
         breathingAudioSource = createAudioSource("BreathingAudio", true, 0.75f);
-        footstepsAudioSource.name = "catso";
         // Setup player movement components.
         playerFrontCheck = GetComponent<PlayerFrontCheck>();
         playerWalk = GetComponent<PlayerWalk>();
