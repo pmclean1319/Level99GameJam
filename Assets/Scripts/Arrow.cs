@@ -11,18 +11,22 @@ public class Arrow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (Player == null)
+            Player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = (Objective.position - Player.position).normalized;
+        if (Objective != null)
+        {
+            Vector3 direction = (Objective.position - Player.position).normalized;
 
-        //create the rotation we need to be in to look at the target
-        Quaternion lookRotation = Quaternion.LookRotation(direction);
+            //create the rotation we need to be in to look at the target
+            Quaternion lookRotation = Quaternion.LookRotation(direction);
 
-        //rotate us over time according to speed until we are in the required rotation
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation * Quaternion.Inverse(Player.rotation), Time.deltaTime * RotationSpeed);
+            //rotate us over time according to speed until we are in the required rotation
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation * Quaternion.Inverse(Player.rotation), Time.deltaTime * RotationSpeed);
+        }
     }
 }
