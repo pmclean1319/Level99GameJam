@@ -305,9 +305,7 @@ GameObject:
   - component: {fileID: 3948260975569105187}
   - component: {fileID: 3948260975569105185}
   - component: {fileID: 3948260975569105198}
-  - component: {fileID: 3948260975569105197}
-  - component: {fileID: 3948260975569105196}
-  - component: {fileID: 3948260975569105199}
+  - component: {fileID: 2319407913309856985}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -331,7 +329,7 @@ Transform:
   - {fileID: 3948260974715618091}
   - {fileID: 1095771692670994943}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &3948260975569105189
 CapsuleCollider:
@@ -404,6 +402,8 @@ MonoBehaviour:
   vDir: {x: 0, y: 0, z: 0}
   movement: {x: 0, y: 0, z: 0}
   isCrouching: 0
+  isRunning: 0
+  isWalking: 0
   isWalkingEnabled: 1
   walkCheckDist: 0.5
   pfc: {fileID: 0}
@@ -440,7 +440,7 @@ MonoBehaviour:
   feet: {fileID: 3948260974715525913}
   inFront: 
   checkDist: 0.5
---- !u!114 &3948260975569105197
+--- !u!114 &2319407913309856985
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -449,54 +449,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 3948260975569105191}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 064eccf60f2114a4080ad5c3ea45abd6, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a0cf99df0de9a04fb486116b0e1cb5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 0}
-  gunAction: {fileID: 0}
---- !u!114 &3948260975569105196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3948260975569105191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed7c5f683d1585a44af83c5a46610c69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 0
-  damage: 0
-  magSize: 0
-  accuracy: 0.05
-  recoil: 0
-  walkingSpeed: 0
-  range: 30
-  handling: 30
-  fireRate: 0
-  fireType: semi
-  projType: bullet
-  rarity: 
-  tokens: 0
-  tokenPool: 0
-  impact: {fileID: 5825487468661524377, guid: 280ccbb5aec083344ad1d68c19025f9a, type: 3}
---- !u!114 &3948260975569105199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3948260975569105191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17b44144198395b4b831dccfd240cf30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stats: {fileID: 0}
-  cam: {fileID: 3948260974897671445}
-  bulletTrail: {fileID: 6757028490922267437, guid: 751c891a75103a94d8f0e9ca1f52732d, type: 3}
-  bulletSpeed: 50
+  audioFadeOutDuration: 0.15
+  walkingFootsteps: {fileID: 8300000, guid: 7fa14993fa9c7374099eef739b153ec8, type: 3}
+  runningFootsteps: {fileID: 8300000, guid: 4efcdf63d1faa0041bd51ed48d512607, type: 3}
+  jumpSound: {fileID: 8300000, guid: 83aed9672bc36284ea0e811859829b4c, type: 3}
+  jumpLandingSound: {fileID: 8300000, guid: cdfad8be63ad8c740b9e7723fa79b3da, type: 3}
+  slowBreathing: {fileID: 8300000, guid: 607b0577fd8f5ad49a78af2bd717ca56, type: 3}
+  normalBreathing: {fileID: 8300000, guid: 2c4a8cdbe39ea7d4a8ecfeaebfdacccb, type: 3}
+  fastBreathing: {fileID: 8300000, guid: 171f7a8b398d3374caead2e640590c9c, type: 3}
 --- !u!1 &3948260975688250648
 GameObject:
   m_ObjectHideFlags: 0

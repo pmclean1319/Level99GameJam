@@ -7,8 +7,6 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerFrontCheck))]
 public class PlayerSounds : MonoBehaviour
 {
-
-    [SerializeField] float audioFadeOutDuration = 0.15f;
     [SerializeField] AudioClip walkingFootsteps;
     [SerializeField] AudioClip runningFootsteps;
     [SerializeField] AudioClip jumpSound;
