@@ -3,9 +3,14 @@ guid: d71305e51b8953a42b1520b40d98310e
 ModelImporter:
   serializedVersion: 22103
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: arrow_material
+    second: {fileID: 2100000, guid: e801ae71596290e4e85a1ce475030bf7, type: 2}
   materials:
-    materialImportMode: 2
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
