@@ -6,7 +6,7 @@ using UnityEngine;
 public class InteractionRay : MonoBehaviour
 {
     float rayDist = 2;
-    public TextMeshProUGUI dispField;
+    public TextMeshPro dispField;
     public GameObject playerObject;
 
     // Start is called before the first frame update

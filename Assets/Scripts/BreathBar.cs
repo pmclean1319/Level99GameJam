@@ -31,6 +31,10 @@ public class BreathBar : MonoBehaviour
         ScreenGrain = ScreenVolume.profile.GetSetting<Grain>();
 
         PlayerJumpScript.Jumped += PlayerJumpScript_Jumped;
+
+        //Added PJM 4/17/23
+        PlayerWalkScript = GameObject.Find("Player").GetComponent<PlayerWalk>();
+        PlayerJumpScript = GameObject.Find("Player").GetComponent<PlayerJump>();
     }
 
     private void PlayerJumpScript_Jumped()
