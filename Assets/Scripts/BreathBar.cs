@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(AudioSource))]
 public class BreathBar : MonoBehaviour
 {
     public float CrouchingBreathLossRate = .05f;
