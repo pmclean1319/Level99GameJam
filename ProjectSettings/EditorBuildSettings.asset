@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Corridor1.unity
     guid: f17bbb71d6eda174f8a4cd44ad82020a
+  - enabled: 1
+    path: Assets/Scenes/Gymnasium.unity
+    guid: 16f7d2e0feb15ac43a0e077ee172eec5
   m_configObjects: {}
