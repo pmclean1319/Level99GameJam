@@ -81,13 +81,15 @@ public class PlayerWalk : MonoBehaviour
             && ((Input.GetAxisRaw("Vertical") != 0)
             || (Input.GetAxisRaw("Horizontal") != 0)))
         {
+            GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
             transform.position += transform.up * stepSpeed;
         }
 
-        if ((pfc.inFront == "vaultable" || pfc.inFront == "ledge" || pfc.inFront == "wall") && Input.GetAxisRaw("Jump") != 0
+        if ((pfc.inFront == "vaultable" || pfc.inFront == "ledge") && Input.GetAxisRaw("Jump") != 0
             && ((Input.GetAxisRaw("Vertical") != 0)
              || (Input.GetAxisRaw("Horizontal") != 0)))
         {
+            GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
             transform.position += transform.up * (stepSpeed/2);
         }
 
