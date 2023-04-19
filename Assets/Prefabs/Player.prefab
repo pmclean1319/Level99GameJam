@@ -684,10 +684,22 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4249589975228545980, guid: a4e96cee1058a1846a3f9e6b7cd77396, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6301879605666339998, guid: a4e96cee1058a1846a3f9e6b7cd77396, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6442556444995638600, guid: a4e96cee1058a1846a3f9e6b7cd77396, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: -584501151274592058, guid: 379915c39025e8640a3b8093ad27f4e5, type: 2}
+    - target: {fileID: 7283185351506111523, guid: a4e96cee1058a1846a3f9e6b7cd77396, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7555652138763408764, guid: a4e96cee1058a1846a3f9e6b7cd77396, type: 3}
       propertyPath: m_fontAsset
       value: 
