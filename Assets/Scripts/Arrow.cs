@@ -19,6 +19,7 @@ public class Arrow : MonoBehaviour
     void Update()
     {
 
+        if (Objective != null) {
             Vector3 direction = (Objective.position - Player.position).normalized;
 
             //create the rotation we need to be in to look at the target
@@ -26,6 +27,7 @@ public class Arrow : MonoBehaviour
 
             //rotate us over time according to speed until we are in the required rotation
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation * Quaternion.Inverse(Player.rotation), Time.deltaTime * RotationSpeed);
+        }
 
 
     }
