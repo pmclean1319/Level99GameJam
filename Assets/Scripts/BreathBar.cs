@@ -31,11 +31,10 @@ public class BreathBar : MonoBehaviour
         ScreenDoF = ScreenVolume.profile.GetSetting<DepthOfField>();
         ScreenGrain = ScreenVolume.profile.GetSetting<Grain>();
 
+        //Added PJM 4/17/23 
+        PlayerWalkScript = FindObjectOfType<PlayerWalk>();
+        PlayerJumpScript = FindObjectOfType<PlayerJump>();
         PlayerJumpScript.Jumped += PlayerJumpScript_Jumped;
-
-        //Added PJM 4/17/23
-        PlayerWalkScript = GameObject.Find("Player").GetComponent<PlayerWalk>();
-        PlayerJumpScript = GameObject.Find("Player").GetComponent<PlayerJump>();
     }
 
     private void PlayerJumpScript_Jumped()
