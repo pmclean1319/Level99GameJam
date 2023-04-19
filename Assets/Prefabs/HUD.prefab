@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5489163159352594695}
   - component: {fileID: 7283185351506111523}
   - component: {fileID: 7095143802092528372}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: eb0597f4bbd43e142b34f0db84809e97, type: 2}
+  m_Material: {fileID: 2100000, guid: b467f01680b52c441bbc69a2bc8fbc42, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
