@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BreathBarCircle
+  m_Name: OrangeBreathBar
   m_Shader: {fileID: -6465566751694194690, guid: dbc5637cbf51c56459a53e67596f0cc9, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -41,7 +41,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Image:
-        m_Texture: {fileID: 2800000, guid: 7fe4612a13f21d040a2bfa95cc41fe4e, type: 3}
+        m_Texture: {fileID: 2800000, guid: e2e7fe01ab7a09942a363297389668d1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
@@ -53,5 +53,5 @@ Material:
     m_Colors:
     - _Fresnel_Color: {r: 3.02282, g: 3.02282, b: 3.02282, a: 1}
     - _Hologram_Tiling: {r: 64, g: 64, b: 0, a: 0}
-    - _Main_Color: {r: 0.8470588, g: 0.8156863, b: 1.364706, a: 0.003921569}
+    - _Main_Color: {r: 0.7490196, g: 0.3529412, b: 0.14509805, a: 0.6039216}
   m_BuildTextureStacks: []

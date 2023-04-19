@@ -37,6 +37,16 @@ public class BreathBar : MonoBehaviour
         PlayerJumpScript.Jumped += PlayerJumpScript_Jumped;
     }
 
+    private void HasAir()
+    {
+        InRoomWithOxygen = true;
+    }
+
+    private void NoAir()
+    {
+        InRoomWithOxygen = false;
+    }
+
     private void PlayerJumpScript_Jumped()
     {
         jumpedSinceLastUpdate = true;

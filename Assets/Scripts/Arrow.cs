@@ -26,7 +26,7 @@ public class Arrow : MonoBehaviour
             Quaternion lookRotation = Quaternion.LookRotation(direction);
 
             //rotate us over time according to speed until we are in the required rotation
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation * Quaternion.Inverse(Player.rotation), Time.deltaTime * RotationSpeed);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * RotationSpeed);
         }
 
 
