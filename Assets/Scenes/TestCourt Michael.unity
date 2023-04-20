@@ -2057,6 +2057,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Terminal
       objectReference: {fileID: 0}
+    - target: {fileID: 2896189507843140193, guid: 031593b4c3b57d14bb4d14dfe54b93da, type: 3}
+      propertyPath: progressTrack
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3187528868034702125, guid: 031593b4c3b57d14bb4d14dfe54b93da, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2275,7 +2279,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-201086
+  m_Name: pb_Mesh-427302
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
