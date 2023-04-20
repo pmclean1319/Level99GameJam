@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 26973270}
   - component: {fileID: 26973272}
   - component: {fileID: 26973271}
-  - component: {fileID: 26973273}
   m_Layer: 5
   m_Name: ButtonList
   m_TagString: Untagged
@@ -205,21 +204,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &26973273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 26973269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 679ffde290a795c42a38075506a1c505, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newGameButton: {fileID: 737956719}
-  optionsButton: {fileID: 1301723987}
-  exitButton: {fileID: 1578889583}
 --- !u!1 &239080547
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,6 +405,7 @@ GameObject:
   - component: {fileID: 825749108}
   - component: {fileID: 825749107}
   - component: {fileID: 825749106}
+  - component: {fileID: 825749110}
   m_Layer: 5
   m_Name: MenuCanvas
   m_TagString: Untagged
@@ -512,6 +497,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &825749110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825749105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679ffde290a795c42a38075506a1c505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newGameButton: {fileID: 737956719}
+  optionsButton: {fileID: 1301723987}
+  exitButton: {fileID: 1578889583}
 --- !u!1 &1097606996
 GameObject:
   m_ObjectHideFlags: 0
