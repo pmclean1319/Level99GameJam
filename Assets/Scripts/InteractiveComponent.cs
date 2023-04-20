@@ -19,8 +19,15 @@ public class InteractiveComponent : MonoBehaviour
 
     public void Activate(GameObject player)
     {
-        Transport(player);
-        Gather(player);
+        if (gameObject.tag == "Terminal")
+        {
+            GetComponent<Terminal>().StartJournal();
+        }
+        else
+        {
+            Transport(player);
+            Gather(player);
+        }
     }
 
     public void Transport(GameObject player)
