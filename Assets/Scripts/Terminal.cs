@@ -7,14 +7,18 @@ using UnityEngine;
 
 public class Terminal : MonoBehaviour
 {
-    const int TEXT_SPEED = 1;
     public TextMeshProUGUI ScreenText;
     public GameObject TerminalCamera;
+    public AudioSource SpaceBarAudio;
+    public AudioSource KeyPressAudio;
     public int progressTrack;
+    public float TypeSpeedMin = .1f;
+    public float TypeSpeedMax = .2f;
     GameObject sceneCamera;
     GameObject player;
     List<Message> messages;
-    int textSpeedTrack = 0;
+    float textSpeedTrack = 0;
+    float randomTypeSpeed = 0;
     int messageLinePosition = 0;
     bool displayText = false;
     Message message;
@@ -36,6 +40,8 @@ public class Terminal : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
+            displayText = false;
+            ScreenText.enabled = false;
             TerminalCamera.SetActive(false);
             sceneCamera.SetActive(true);
             ChangePlayerScriptStatus(player, true);
@@ -44,17 +50,20 @@ public class Terminal : MonoBehaviour
 
         if (displayText)
         {
-            if (TEXT_SPEED == textSpeedTrack)
+            textSpeedTrack += Time.deltaTime;
+            if (textSpeedTrack > randomTypeSpeed)
             {
                 ScreenText.text = message.messageText.Substring(0, messageLinePosition);
+                if (message.messageText[messageLinePosition] == ' ')
+                    SpaceBarAudio.Play();
+                else
+                    KeyPressAudio.Play();
                 messageLinePosition++;
                 textSpeedTrack = 0;
+                randomTypeSpeed = Random.Range(TypeSpeedMin, TypeSpeedMax);
             }
-            else
-            {
-                textSpeedTrack++;
-            }
-            if (messageLinePosition == message.messageText.Length + 1)
+
+            if (messageLinePosition == message.messageText.Length)
                 displayText = false;
         }
 
@@ -68,6 +77,7 @@ public class Terminal : MonoBehaviour
         if(sceneCamera == null)
             sceneCamera = GameObject.FindGameObjectWithTag("MainCamera");
 
+        ScreenText.enabled = true;
         ChangePlayerScriptStatus(player, false);
         sceneCamera.SetActive(false);
         TerminalCamera.SetActive(true);
@@ -78,7 +88,8 @@ public class Terminal : MonoBehaviour
     public void TypeOutMessage()
     {
         message = messages.Where(m => m.messageNumber == progressTrack).Single();
-        displayText = true;
+        if(messageLinePosition < message.messageText.Length + 1)
+            displayText = true;
     }
 
     void ChangePlayerScriptStatus(GameObject player, bool status)
