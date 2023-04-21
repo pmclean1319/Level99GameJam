@@ -411,6 +411,8 @@ MonoBehaviour:
   SpaceBarAudio: {fileID: 6075784052710649305}
   KeyPressAudio: {fileID: 9026668426917287404}
   progressTrack: 0
+  TypeSpeedMin: 0.1
+  TypeSpeedMax: 0.2
 --- !u!114 &9048212000705380946
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -98,6 +98,6 @@ public class Terminal : MonoBehaviour
         player.GetComponent<PlayerWalk>().enabled = status;
         player.GetComponent<PlayerJump>().enabled = status;
         player.GetComponent<PlayerFrontCheck>().enabled = status;
-        player.GetComponent<PlayerCrouch>().enabled = status;
+        //player.GetComponent<PlayerCrouch>().enabled = status;
     }
 }

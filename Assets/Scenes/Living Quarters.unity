@@ -808,6 +808,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7095143801267505438, guid: 2d1539564190f784faadab27b15f200d, type: 3}
+      propertyPath: InRoomWithOxygen
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7283185352331675593, guid: 2d1539564190f784faadab27b15f200d, type: 3}
       propertyPath: m_Enabled
       value: 0
