@@ -32,7 +32,7 @@ public class PlayerJump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        {
+        if (!GameState.IsPaused) {
             CheckforFalling();
             JumpBegin();
             //JumpEnd();
