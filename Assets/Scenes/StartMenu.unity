@@ -646,6 +646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newGameButton: {fileID: 737956719}
+  resumeButton: {fileID: 1666762027}
   optionsButton: {fileID: 1301723987}
   exitButton: {fileID: 1578889583}
 --- !u!1 &1097606996
