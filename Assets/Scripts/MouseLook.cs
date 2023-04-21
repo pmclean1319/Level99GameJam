@@ -18,10 +18,12 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
-        //print("Euler = " + transform.eulerAngles.x);
-        //print("Rotation = " + transform.rotation.x);
-        Look();
-        //VerticalLock();
+        if (!GameState.IsPaused) {
+            //print("Euler = " + transform.eulerAngles.x);
+            //print("Rotation = " + transform.rotation.x);
+            Look();
+            //VerticalLock();
+        }
     }
 
     private void Look()

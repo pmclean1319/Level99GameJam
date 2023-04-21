@@ -18,7 +18,9 @@ public class InteractionRay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckForInteraction();
+        if (!GameState.IsPaused) {
+            CheckForInteraction();
+        }
     }
 
     public void CheckForInteraction()
