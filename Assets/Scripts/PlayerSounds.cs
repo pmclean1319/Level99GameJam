@@ -27,6 +27,7 @@ public class PlayerSounds : MonoBehaviour
     PlayerFrontCheck playerFrontCheck;
     PlayerWalk playerWalk;
     PlayerJump playerJump;
+    List<AudioSource> allAudioSources = new List<AudioSource>();
     Dictionary<AudioSource, AudioClip> queuedSound = new Dictionary<AudioSource, AudioClip>();
     Dictionary<AudioSource, float> fadeDuration = new Dictionary<AudioSource, float>();
     Dictionary<AudioSource, float> maxVolume = new Dictionary<AudioSource, float>();
@@ -44,6 +45,8 @@ public class PlayerSounds : MonoBehaviour
         playerJump = GetComponent<PlayerJump>();
         playerJump.Jumped += PlayerJumped;
         playerJump.Landed += PlayerLanded;
+        GameState.Paused += PauseAudio;
+        GameState.UnPaused += UnPauseAudio;
     }
 
     AudioSource createAudioSource(string name, bool loop, float fadeOutDuration, float sourceMaxVolume)
@@ -54,6 +57,7 @@ public class PlayerSounds : MonoBehaviour
         audioSource.loop = loop;
         fadeDuration[audioSource] = fadeOutDuration;
         maxVolume[audioSource] = sourceMaxVolume;
+        allAudioSources.Add(audioSource);
         return audioSource;
     }
     void PlayerJumped()
@@ -129,6 +133,16 @@ public class PlayerSounds : MonoBehaviour
         } else { // Current clip is wrong; start fadeout.
             queuedSound[audioSource] = newSound;
         }
+    }
+
+    void PauseAudio()
+    {
+        allAudioSources.ForEach(a => a.Pause());
+    }
+
+    void UnPauseAudio()
+    {
+        allAudioSources.ForEach(a => a.UnPause());
     }
 
     void UpdateQueuedSounds()
