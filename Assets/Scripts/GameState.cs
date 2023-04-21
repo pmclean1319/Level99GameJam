@@ -16,6 +16,8 @@ static public class GameState
             Time.timeScale = 0;
             IsPaused = true;
             Paused?.Invoke();
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
     static public void UnPause()
@@ -24,6 +26,8 @@ static public class GameState
             Time.timeScale = 1;
             IsPaused = false;
             UnPaused?.Invoke();
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 }
