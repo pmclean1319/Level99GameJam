@@ -3428,6 +3428,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6136063356627918015, guid: ed440d5889478a04cad1b6f06c9abfb5, type: 3}
   m_PrefabInstance: {fileID: 391720776}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &391720778 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6488514063143137971, guid: ed440d5889478a04cad1b6f06c9abfb5, type: 3}
+  m_PrefabInstance: {fileID: 391720776}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &391720779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391720778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4afdc1d3322a40b4f8031bb44af89966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destination: Lounge
+  connectorSpawn: Lounge1
+--- !u!114 &391720780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391720778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 897b8cae24dcf9142b3716e16c090560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interText: To Lounge
 --- !u!1001 &412108534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14422,7 +14454,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-540450
+  m_Name: pb_Mesh-983848
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -19491,7 +19523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5717521291928787106, guid: 36185e02a1a640f459a17d6895c1b306, type: 3}
       propertyPath: pointName
-      value: Corridor2
+      value: Corridor3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -19667,7 +19699,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-540438
+  m_Name: pb_Mesh-983836
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2

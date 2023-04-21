@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gymnasium.unity
     guid: 16f7d2e0feb15ac43a0e077ee172eec5
+  - enabled: 1
+    path: Assets/Scenes/Lounge.unity
+    guid: edbae856c8b5fdf45a08747432ab5b0a
   m_configObjects: {}

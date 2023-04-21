@@ -14,8 +14,8 @@ public class Terminal : MonoBehaviour
     public int progressTrack;
     public float TypeSpeedMin = .1f;
     public float TypeSpeedMax = .2f;
-    GameObject sceneCamera;
-    GameObject player;
+    public GameObject sceneCamera;
+    public GameObject player;
     List<Message> messages;
     float textSpeedTrack = 0;
     float randomTypeSpeed = 0;
