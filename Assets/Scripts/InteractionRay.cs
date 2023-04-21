@@ -31,7 +31,7 @@ public class InteractionRay : MonoBehaviour
             {
                 if (dispField != null)
                 {
-                    dispField.text = info.collider.gameObject.GetComponent<InteractiveComponent>().interText;
+                    dispField.text = info.collider.gameObject.GetComponent<InteractiveComponent>().interText + System.Environment.NewLine + "[F]";
                 }
 
                 if (Input.GetButton("Interact"))
