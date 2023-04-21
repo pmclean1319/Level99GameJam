@@ -13,6 +13,7 @@ static public class GameState
     static public void Pause()
     {
         if (!IsPaused) {
+            Time.timeScale = 0;
             IsPaused = true;
             Paused?.Invoke();
         }
@@ -20,6 +21,7 @@ static public class GameState
     static public void UnPause()
     {
         if (IsPaused) {
+            Time.timeScale = 1;
             IsPaused = false;
             UnPaused?.Invoke();
         }

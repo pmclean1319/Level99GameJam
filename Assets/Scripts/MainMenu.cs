@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         canvas = GetComponent<Canvas>();
-        resumeButton.gameObject.SetActive(false);
+         resumeButton.gameObject.SetActive(false);
         // Setup button listeners.
         newGameButton.onClick.AddListener(launchNewGame);
         resumeButton.onClick.AddListener(resumeGame);
@@ -34,8 +34,7 @@ public class MainMenu : MonoBehaviour
         if (isGameLaunched) {
             if (Input.GetKeyDown(KeyCode.Escape)) {
                 if (!canvas.enabled) {
-                    canvas.enabled = true;
-                    Time.timeScale = 0;
+                    pauseGame();
                 } else {
                     resumeGame();
                 }
@@ -52,10 +51,16 @@ public class MainMenu : MonoBehaviour
         canvas.enabled = false;
     }
 
+    void pauseGame()
+    {
+        canvas.enabled = true;
+        GameState.Pause();
+    }
+
     void resumeGame()
     {
         canvas.enabled = false;
-        Time.timeScale = 1;
+        GameState.UnPause();
     }
 
     void launchOptions()
