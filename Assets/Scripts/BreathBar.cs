@@ -11,7 +11,6 @@ public class BreathBar : MonoBehaviour
     public float BreathLossRate = .1f;
     public float RunningBreathLossRate = .2f;
     public float ClimbingBreathLossRate = .2f;
-    public float AudioFadeOutDuration = 0.5f;
     public Image Bar;
     public TextMeshProUGUI BreathPercentageText;
     public PlayerWalk PlayerWalkScript;
