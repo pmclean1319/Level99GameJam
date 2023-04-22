@@ -140169,7 +140169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b11636339b2fa0247b992d1af0a9fe41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 3948260975569105186}
   Objective: {fileID: 0}
   RotationSpeed: 5
 --- !u!1 &4377291362728755653
