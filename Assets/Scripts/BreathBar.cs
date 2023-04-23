@@ -15,10 +15,12 @@ public class BreathBar : MonoBehaviour
     public TextMeshProUGUI BreathPercentageText;
     public PlayerWalk PlayerWalkScript;
     public PlayerJump PlayerJumpScript;
+    public PlayerVitals PlayerVitalsScript;
     public PostProcessVolume ScreenVolume;
     public bool InRoomWithOxygen = false;
     private Vignette ScreenVignette;
     private DepthOfField ScreenDoF;
+    public float OxygenLevel { get; private set; }
 
     private bool jumpedSinceLastUpdate = false;
     private Grain ScreenGrain;
@@ -30,7 +32,7 @@ public class BreathBar : MonoBehaviour
         ScreenDoF = ScreenVolume.profile.GetSetting<DepthOfField>();
         ScreenGrain = ScreenVolume.profile.GetSetting<Grain>();
 
-        //Added PJM 4/17/23 
+        PlayerVitalsScript = FindObjectOfType<PlayerVitals>();
         PlayerWalkScript = FindObjectOfType<PlayerWalk>();
         PlayerJumpScript = FindObjectOfType<PlayerJump>();
         PlayerJumpScript.Jumped += PlayerJumpScript_Jumped;
@@ -110,5 +112,7 @@ public class BreathBar : MonoBehaviour
         {
             ScreenGrain.intensity.value = 0;
         }
+
+        PlayerVitalsScript.SetOxygenLevel(Bar.fillAmount);
     }
 }
