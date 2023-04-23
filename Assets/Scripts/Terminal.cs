@@ -9,6 +9,7 @@ using UnityEngine.Networking;
 public class Terminal : MonoBehaviour
 {
     public TextMeshProUGUI ScreenText;
+    public TextMeshProUGUI ExitText;
     public GameObject TerminalCamera;
     public AudioSource SpaceBarAudio;
     public AudioSource KeyPressAudio;
@@ -63,10 +64,11 @@ public class Terminal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Return))
         {
             displayText = false;
             ScreenText.enabled = false;
+            ExitText.alpha = 0f;
             TerminalCamera.SetActive(false);
             sceneCamera.SetActive(true);
             ChangePlayerScriptStatus(player, true);
@@ -103,6 +105,8 @@ public class Terminal : MonoBehaviour
             sceneCamera = GameObject.FindGameObjectWithTag("MainCamera");
 
         ScreenText.enabled = true;
+        //ExitText.enabled = true;
+        ExitText.alpha = 1f;
         ChangePlayerScriptStatus(player, false);
         sceneCamera.SetActive(false);
         TerminalCamera.SetActive(true);
