@@ -6,6 +6,7 @@ public class EntrySpawnpoint : MonoBehaviour
 {
 
     public string pointName;
+    public Transform objective;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class EntrySpawnpoint : MonoBehaviour
         {
             player.transform.position = transform.position;
             player.transform.rotation = transform.rotation;
+            FindObjectOfType<Arrow>().Objective = objective;
         }
     }
 }
