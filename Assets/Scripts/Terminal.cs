@@ -60,7 +60,7 @@ public class Terminal : MonoBehaviour
         sceneCamera = GameObject.FindGameObjectWithTag("MainCamera");
         player = GameObject.FindGameObjectWithTag("Player");
 
-        if (progressTrack == 0)
+        if (progressTrack == 1)
         {
             StartJournal();
         }

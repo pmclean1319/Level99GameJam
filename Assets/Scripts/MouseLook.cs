@@ -12,7 +12,7 @@ public class MouseLook : MonoBehaviour
 
     private void Start()
     {
-        transform.localRotation.Set(-60, 0, 0, 0);
+        transform.localRotation.Set(-60, 0, -180, 0);
         //body = GameObject.Find("Player");
     }
 

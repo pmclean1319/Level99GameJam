@@ -548,8 +548,8 @@ MonoBehaviour:
   SpaceBarAudio: {fileID: 6075784052710649305}
   KeyPressAudio: {fileID: 9026668426917287404}
   progressTrack: 0
-  TypeSpeedMin: 0.005
-  TypeSpeedMax: 0.009
+  TypeSpeedMin: 0.01
+  TypeSpeedMax: 0.05
   sceneCamera: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &9048212000705380946
