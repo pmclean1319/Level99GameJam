@@ -59,6 +59,11 @@ public class Terminal : MonoBehaviour
         }
         sceneCamera = GameObject.FindGameObjectWithTag("MainCamera");
         player = GameObject.FindGameObjectWithTag("Player");
+
+        if (progressTrack == 0)
+        {
+            StartJournal();
+        }
     }
 
     // Update is called once per frame

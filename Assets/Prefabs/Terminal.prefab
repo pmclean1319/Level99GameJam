@@ -420,7 +420,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press 'Enter' to leave.
+  m_text: PRESS 'ENTER' TO LEAVE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 379915c39025e8640a3b8093ad27f4e5, type: 2}
   m_sharedMaterial: {fileID: -584501151274592058, guid: 379915c39025e8640a3b8093ad27f4e5, type: 2}
@@ -429,8 +429,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
+    rgba: 14485
+  m_fontColor: {r: 0.5849056, g: 0.21861692, b: 0, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -548,8 +548,8 @@ MonoBehaviour:
   SpaceBarAudio: {fileID: 6075784052710649305}
   KeyPressAudio: {fileID: 9026668426917287404}
   progressTrack: 0
-  TypeSpeedMin: 0.1
-  TypeSpeedMax: 0.2
+  TypeSpeedMin: 0.005
+  TypeSpeedMax: 0.009
   sceneCamera: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &9048212000705380946
@@ -838,15 +838,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 379915c39025e8640a3b8093ad27f4e5, type: 2}
+  m_sharedMaterial: {fileID: -584501151274592058, guid: 379915c39025e8640a3b8093ad27f4e5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0.24528301, b: 0.07338366, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
