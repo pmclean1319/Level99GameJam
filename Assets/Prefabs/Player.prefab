@@ -1254,7 +1254,7 @@ MonoBehaviour:
   slowBreathing: {fileID: 8300000, guid: 607b0577fd8f5ad49a78af2bd717ca56, type: 3}
   normalBreathing: {fileID: 8300000, guid: 2c4a8cdbe39ea7d4a8ecfeaebfdacccb, type: 3}
   fastBreathing: {fileID: 8300000, guid: 171f7a8b398d3374caead2e640590c9c, type: 3}
-  oxygenMusic: {fileID: 8300000, guid: 1578584f2ddada041a0562e0c262a553, type: 3}
+  oxygenMusic: {fileID: 8300000, guid: c68c2a4225dec444badd38079e0dd9bf, type: 3}
   noOxygenMusic: {fileID: 8300000, guid: f170ad1a720db6c48864dd2cdf0b821a, type: 3}
   musicVolume: 0.25
   effectsVolume: 1
@@ -137687,7 +137687,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 11
+  m_VersionIndex: 14
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
