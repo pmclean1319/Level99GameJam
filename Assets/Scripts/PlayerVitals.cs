@@ -6,7 +6,8 @@ public class PlayerVitals : MonoBehaviour
 {
 
     public float OxygenLevel { get; private set; }
-     
+    public string spawnPoint;
+
     public void SetOxygenLevel(float newOxygenLevel)
     {
         OxygenLevel = newOxygenLevel;
