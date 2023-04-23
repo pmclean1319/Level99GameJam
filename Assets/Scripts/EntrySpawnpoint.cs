@@ -25,7 +25,7 @@ public class EntrySpawnpoint : MonoBehaviour
         if (player.GetComponent<PlayerVitals>().spawnPoint == pointName)
         {
             player.transform.position = transform.position;
-            player.transform.rotation = transform.rotation;
+            player.transform.eulerAngles = transform.eulerAngles;
             FindObjectOfType<Arrow>().Objective = objective;
         }
     }
