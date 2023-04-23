@@ -114,7 +114,7 @@ public class PlayerSounds : MonoBehaviour
 
     void ToggleMusic()
     {
-        SetSound(musicAudioSource, oxygenMusic);
+        SetSound(musicAudioSource, RoomChangeZone.PlayerInOxygenZone ? oxygenMusic : noOxygenMusic);
     }
 
     void SetSound(AudioSource audioSource, AudioClip newSound)
