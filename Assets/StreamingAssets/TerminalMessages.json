@@ -2,11 +2,15 @@
     "Items": [
         {
             "messageNumber": "1",
-            "messageText": "Meteors came from everywhere, woah dude. I was like OMG get me out of here."
+            "messageText": "Day 13 since the meteor shower. I can't believe I've lasted as long as I have all alone up here. Systems analysis show air loss across the station continues to get worse. Aside from my quarters, the hallway outside, and of course the gym, only the emergency airlocks are showing pressurized status. All attempts to get comms going from my location have failed. Food reserves are almost depleted. I've got no choice. I must try to escape on my own. With this damned compromised space suit I'm going to have to watch my breath and be quick about it. I should take one last trip to the gymnasium before I head to the lounge. Make sure I've got my bearings. If anyone should find these notes, please know I didn't go down without a fight. --Dr. S"
         },
         {
             "messageNumber": "2",
-            "messageText": "I just played in the gym for a while, it was pretty cool. Forgot all about the doom and stuff."
+            "messageText": "This must be the thousandth time I've gazed out of this window into the lounge. Terminal readouts are saying there's no air out there, and very little in the way of atmospheric pressure as well. My suit should prevent instaneous depressurization, however the sizeable hole in the helmet's screen means stored O2 won't last long. If I remain calm, keep my breathing steady, I should be able to get to the other airlock at the end of the lounge before passing out. I cannot believe this is what it's come to. But I haven't any other choice. --Dr.S"
+        },
+        {
+            "messageNumber": "3",
+            "messageText": "I made it. It wasn't far but it felt like an eternity. My heart is beating out of my chest and I can only sit here and type out my thoughts until I no longer see the blood in the veins behind my eyes. I've only experienced depressurization once before. The panic, the disorientation. I can't lose my mind or my heading. Up ahead is the hydroponics lab. I... I'm trying to remember the layout of the lab. I've only got one shot at this. Have to be quick, have to be calm. --Dr.S"
         }
     ]
 }
