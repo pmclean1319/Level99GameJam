@@ -4,27 +4,28 @@ using UnityEngine;
 
 public class PlayerVitals : MonoBehaviour
 {
-    public int playerHealth;
-    public string spawnPoint;
-    
 
-    // Start is called before the first frame update
+    public float OxygenLevel { get; private set; }
+
+    public string spawnPoint;
+
+    public void SetOxygenLevel(float newOxygenLevel)
+    {
+        OxygenLevel = newOxygenLevel;
+        if (OxygenLevel <= 0) {
+            TriggerPlayerDeath();
+        }
+    }
+
     void Start()
     {
-        //Singleton Check
-        if (GameObject.Find("Player"))
-        DontDestroyOnLoad(this.gameObject);
+        if (GameObject.Find("Player")) {
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void TriggerPlayerDeath()
     {
-        
-    }
 
-    public void ChangeHealth( int amt)
-    {
-        playerHealth += amt;
     }
-
 }
