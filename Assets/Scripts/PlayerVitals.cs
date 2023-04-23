@@ -6,6 +6,7 @@ public class PlayerVitals : MonoBehaviour
 {
 
     public float OxygenLevel { get; private set; }
+
     public string spawnPoint;
 
     public void SetOxygenLevel(float newOxygenLevel)
@@ -13,6 +14,13 @@ public class PlayerVitals : MonoBehaviour
         OxygenLevel = newOxygenLevel;
         if (OxygenLevel <= 0) {
             TriggerPlayerDeath();
+        }
+    }
+
+    void Start()
+    {
+        if (GameObject.Find("Player")) {
+            DontDestroyOnLoad(gameObject);
         }
     }
 
