@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TestCourt Michael.unity
-    guid: 5e8d524dccbdbc143847170b68a41b1d
+    path: Assets/Scenes/StartMenu.unity
+    guid: 6bc77a05bf68d33428c008fefc4d7474
   - enabled: 1
     path: Assets/Scenes/Living Quarters.unity
     guid: 04c3506beddb5d0428d4ec03f4dad81d

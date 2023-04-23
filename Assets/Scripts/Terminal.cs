@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class Terminal : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class Terminal : MonoBehaviour
     public float TypeSpeedMax = .2f;
     public GameObject sceneCamera;
     public GameObject player;
-    List<Message> messages;
+    static List<Message> messages;
     float textSpeedTrack = 0;
     float randomTypeSpeed = 0;
     int messageLinePosition = 0;
@@ -24,13 +25,37 @@ public class Terminal : MonoBehaviour
     Message message;
 
     // Start is called before the first frame update
-    void Start()
+    IEnumerator Start()
     {
-        string jsonPath = Application.streamingAssetsPath + "/TerminalMessages.json";
-        string jsonStr = File.ReadAllText(jsonPath);
+        if (messages == null)
+        {
+            string jsonStr = "";
+            if (Application.platform == RuntimePlatform.WebGLPlayer)
+            {
+                string path = Path.Combine(Application.streamingAssetsPath, "TerminalMessages.json");
 
-        messages = JsonHelper.FromJson<Message>(jsonStr).ToList();
+                using (var request = UnityWebRequest.Get(path))
+                {
+                    yield return request.SendWebRequest();
 
+                    if (request.result != UnityWebRequest.Result.Success)
+                    {
+                        Debug.LogError("Error: " + request.error);
+                        yield break;
+                    }
+
+                    jsonStr = request.downloadHandler.text;
+                }
+            }
+            else
+            {
+                string jsonPath = Application.streamingAssetsPath + "/TerminalMessages.json";
+                jsonStr = File.ReadAllText(jsonPath);
+
+            }
+
+            messages = JsonHelper.FromJson<Message>(jsonStr).ToList();
+        }
         sceneCamera = GameObject.FindGameObjectWithTag("MainCamera");
         player = GameObject.FindGameObjectWithTag("Player");
     }

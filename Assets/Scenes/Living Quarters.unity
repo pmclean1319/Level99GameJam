@@ -808,6 +808,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3977558911150945212, guid: 2d1539564190f784faadab27b15f200d, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 132874865}
+    - target: {fileID: 3977558911150945212, guid: 2d1539564190f784faadab27b15f200d, type: 3}
+      propertyPath: Objective
+      value: 
+      objectReference: {fileID: 4843605080301842782}
     - target: {fileID: 7095143801267505438, guid: 2d1539564190f784faadab27b15f200d, type: 3}
       propertyPath: InRoomWithOxygen
       value: 1
@@ -835,6 +843,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d1539564190f784faadab27b15f200d, type: 3}
+--- !u!4 &132874865 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3948260975569105186, guid: 2d1539564190f784faadab27b15f200d, type: 3}
+  m_PrefabInstance: {fileID: 132874864}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &176815236
 Mesh:
   m_ObjectHideFlags: 0
@@ -4968,7 +4981,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh85380
+  m_Name: pb_Mesh198000
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -5585,6 +5598,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interText: TO CORRIDOR
+--- !u!4 &4843605080301842782 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6715134086578834351, guid: c34c57df28991a54d935f6ccf6f651e5, type: 3}
+  m_PrefabInstance: {fileID: 4843605080301842779}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4843605080301842788
 MonoBehaviour:
   m_ObjectHideFlags: 0
