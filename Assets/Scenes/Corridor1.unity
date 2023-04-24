@@ -3262,6 +3262,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5717521291928787106, guid: 36185e02a1a640f459a17d6895c1b306, type: 3}
+      propertyPath: objective
+      value: 
+      objectReference: {fileID: 72602664}
+    - target: {fileID: 5717521291928787106, guid: 36185e02a1a640f459a17d6895c1b306, type: 3}
       propertyPath: pointName
       value: Corridor1
       objectReference: {fileID: 0}
@@ -9244,7 +9248,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh82090
+  m_Name: pb_Mesh93380
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -9479,6 +9483,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5717521291928787106, guid: 36185e02a1a640f459a17d6895c1b306, type: 3}
+      propertyPath: objective
+      value: 
+      objectReference: {fileID: 391720777}
     - target: {fileID: 5717521291928787106, guid: 36185e02a1a640f459a17d6895c1b306, type: 3}
       propertyPath: pointName
       value: Corridor2
@@ -19699,7 +19707,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-983836
+  m_Name: pb_Mesh93398
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
