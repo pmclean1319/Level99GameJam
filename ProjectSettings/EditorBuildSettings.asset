@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hydroponics.unity
     guid: 4e7d50874094e354190882dfe1040609
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: 39c81fd517bae9a459ceea408f896636
   m_configObjects: {}
