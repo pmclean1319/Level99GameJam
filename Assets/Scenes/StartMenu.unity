@@ -962,7 +962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxZoomOffset: 2.5
-  zoomDuration: 35
+  zoomDuration: 65
   rectTransform: {fileID: 1291160624}
 --- !u!4 &873159167
 Transform:
