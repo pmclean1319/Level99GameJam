@@ -2,15 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-static public class GameState
+public class GameState
 {
-    static public event Action Paused;
-    static public event Action UnPaused;
+    static public GameState Instance = new GameState();
 
-    static public bool IsPaused {  get; private set; }
+    public event Action Paused;
+    public event Action UnPaused;
+    public event Action Reset;
 
-    static public void Pause()
+    public bool IsPaused {  get; private set; }
+
+    public void Pause()
     {
         if (!IsPaused) {
             Time.timeScale = 0;
@@ -20,7 +24,7 @@ static public class GameState
             Cursor.lockState = CursorLockMode.None;
         }
     }
-    static public void UnPause()
+    public void UnPause()
     {
         if (IsPaused) {
             Time.timeScale = 1;
@@ -30,4 +34,16 @@ static public class GameState
             Cursor.lockState = CursorLockMode.Locked;
         }
     }
+
+    public void ResetGame()
+    {
+        Debug.Log("Resetting");
+        Reset?.Invoke();
+        IsPaused = false;
+        Time.timeScale = 1;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Instance = new GameState();
+        SceneManager.LoadScene("StartMenu");
+    } 
 }

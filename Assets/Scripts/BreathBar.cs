@@ -28,6 +28,7 @@ public class BreathBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         ScreenVignette = ScreenVolume.profile.GetSetting<Vignette>();
         ScreenDoF = ScreenVolume.profile.GetSetting<DepthOfField>();
         ScreenGrain = ScreenVolume.profile.GetSetting<Grain>();
@@ -95,7 +96,8 @@ public class BreathBar : MonoBehaviour
                 Bar.fillAmount += Time.deltaTime * .5f;
         }
 
-        float breathPercentage = Bar.fillAmount * 100 * 4 / 3;
+        PlayerVitalsScript.SetOxygenLevel(Bar.fillAmount * 4 / 3);
+        float breathPercentage = PlayerVitalsScript.OxygenLevel * 100;
         BreathPercentageText.text = Mathf.Round(breathPercentage).ToString() + "%";
 
         if(breathPercentage <= 50)
@@ -112,7 +114,5 @@ public class BreathBar : MonoBehaviour
         {
             ScreenGrain.intensity.value = 0;
         }
-
-        PlayerVitalsScript.SetOxygenLevel(Bar.fillAmount);
     }
 }

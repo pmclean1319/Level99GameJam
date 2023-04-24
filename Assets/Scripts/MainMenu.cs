@@ -27,6 +27,7 @@ public class MainMenu : MonoBehaviour
 
         // Ensure main menu component survives scene transitions.
         DontDestroyOnLoad(gameObject);
+        GameState.Instance.Reset += () => Destroy(gameObject); 
     }
 
     private void Update()
@@ -55,13 +56,13 @@ public class MainMenu : MonoBehaviour
     {
         resumeButton.onClick.AddListener(closeMainMenu);
         canvas.enabled = true;
-        GameState.Pause();
+        GameState.Instance.Pause();
     }
 
     void closeMainMenu()
     {
         canvas.enabled = false;
-        GameState.UnPause();
+        GameState.Instance.UnPause();
     }
 
     void launchOptions()

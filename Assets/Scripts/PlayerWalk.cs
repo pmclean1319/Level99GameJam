@@ -33,7 +33,7 @@ public class PlayerWalk : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!GameState.IsPaused && isWalkingEnabled)
+        if (!GameState.Instance.IsPaused && isWalkingEnabled)
         {
             Move();
         }

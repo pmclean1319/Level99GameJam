@@ -18,7 +18,7 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
-        if (!GameState.IsPaused) {
+        if (!GameState.Instance.IsPaused) {
             //print("Euler = " + transform.eulerAngles.x);
             //print("Rotation = " + transform.rotation.x);
             Look();

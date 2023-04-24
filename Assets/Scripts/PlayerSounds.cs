@@ -27,13 +27,19 @@ public class PlayerSounds : MonoBehaviour
     PlayerFrontCheck playerFrontCheck;
     PlayerWalk playerWalk;
     PlayerJump playerJump;
-    List<AudioSource> allAudioSources = new List<AudioSource>();
-    Dictionary<AudioSource, AudioClip> queuedSound = new Dictionary<AudioSource, AudioClip>();
-    Dictionary<AudioSource, float> fadeDuration = new Dictionary<AudioSource, float>();
-    Dictionary<AudioSource, float> maxVolume = new Dictionary<AudioSource, float>();
+    List<AudioSource> allAudioSources;
+    Dictionary<AudioSource, AudioClip> queuedSound;
+    Dictionary<AudioSource, float> fadeDuration;
+    Dictionary<AudioSource, float> maxVolume;
 
     void Start()
     {
+        Debug.Log("Its Starting");
+        // Populate or reset lists.
+        allAudioSources = new List<AudioSource>();
+        queuedSound = new Dictionary<AudioSource, AudioClip>();
+        fadeDuration = new Dictionary<AudioSource, float>();
+        maxVolume = new Dictionary<AudioSource, float>();
         // Setup audio sources.
         jumpLandingAudioSource = createAudioSource("JumpLandingAudio", false, 0f, effectsVolume);
         footstepsAudioSource = createAudioSource("FootstepsAudio", true, 0.15f, effectsVolume);
@@ -45,8 +51,8 @@ public class PlayerSounds : MonoBehaviour
         playerJump = GetComponent<PlayerJump>();
         playerJump.Jumped += PlayerJumped;
         playerJump.Landed += PlayerLanded;
-        GameState.Paused += PauseAudio;
-        GameState.UnPaused += UnPauseAudio;
+        GameState.Instance.Paused += PauseAudio;
+        GameState.Instance.UnPaused += UnPauseAudio;
     }
 
     AudioSource createAudioSource(string name, bool loop, float fadeOutDuration, float sourceMaxVolume)
