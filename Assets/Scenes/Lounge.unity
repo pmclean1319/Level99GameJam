@@ -3492,6 +3492,10 @@ PrefabInstance:
       value: 77.3
       objectReference: {fileID: 0}
     - target: {fileID: 344108890355790901, guid: 8ecf9450bad0744439b210dd18d4e308, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 344108890355790901, guid: 8ecf9450bad0744439b210dd18d4e308, type: 3}
       propertyPath: m_Shadows.m_Type
       value: 2
       objectReference: {fileID: 0}
@@ -11209,6 +11213,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 739449794}
     - target: {fileID: 8986203055499283578, guid: 5ca207304f0603c41adbf34eb046daee, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8986203055499283578, guid: 5ca207304f0603c41adbf34eb046daee, type: 3}
       propertyPath: m_Shadows.m_Type
       value: 2
       objectReference: {fileID: 0}
@@ -11798,6 +11806,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1738177185}
+    - target: {fileID: 8140889882999943595, guid: 6f7bcf7f2ae72674085f2765d2feeea9, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8140889882999943595, guid: 6f7bcf7f2ae72674085f2765d2feeea9, type: 3}
       propertyPath: m_Shadows.m_Type
       value: 2
@@ -14217,6 +14229,10 @@ PrefabInstance:
     - target: {fileID: 344108890355790901, guid: 8ecf9450bad0744439b210dd18d4e308, type: 3}
       propertyPath: m_SpotAngle
       value: 77.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 344108890355790901, guid: 8ecf9450bad0744439b210dd18d4e308, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 344108890355790901, guid: 8ecf9450bad0744439b210dd18d4e308, type: 3}
       propertyPath: m_Shadows.m_Type
@@ -32130,6 +32146,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1208394588}
     - target: {fileID: 8399672286671066707, guid: 6da5047cabce5ec419dece35730a5036, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8399672286671066707, guid: 6da5047cabce5ec419dece35730a5036, type: 3}
       propertyPath: m_Shadows.m_Type
       value: 2
       objectReference: {fileID: 0}
@@ -33467,6 +33487,10 @@ PrefabInstance:
       value: 173
       objectReference: {fileID: 0}
     - target: {fileID: 344108890355790901, guid: 8ecf9450bad0744439b210dd18d4e308, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 344108890355790901, guid: 8ecf9450bad0744439b210dd18d4e308, type: 3}
       propertyPath: m_InnerSpotAngle
       value: 21
       objectReference: {fileID: 0}
@@ -33865,6 +33889,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 794985263}
+    - target: {fileID: 8140889882999943595, guid: 6f7bcf7f2ae72674085f2765d2feeea9, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8140889882999943595, guid: 6f7bcf7f2ae72674085f2765d2feeea9, type: 3}
       propertyPath: m_Shadows.m_Type
       value: 2
@@ -38268,6 +38296,10 @@ PrefabInstance:
     - target: {fileID: 344108890355790901, guid: 8ecf9450bad0744439b210dd18d4e308, type: 3}
       propertyPath: m_SpotAngle
       value: 77.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 344108890355790901, guid: 8ecf9450bad0744439b210dd18d4e308, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 344108890355790901, guid: 8ecf9450bad0744439b210dd18d4e308, type: 3}
       propertyPath: m_Shadows.m_Type
@@ -49237,6 +49269,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 593810167}
     - target: {fileID: 8140889882999943595, guid: 6f7bcf7f2ae72674085f2765d2feeea9, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8140889882999943595, guid: 6f7bcf7f2ae72674085f2765d2feeea9, type: 3}
       propertyPath: m_Shadows.m_Type
       value: 2
       objectReference: {fileID: 0}
@@ -50047,6 +50083,10 @@ PrefabInstance:
       value: 77.3
       objectReference: {fileID: 0}
     - target: {fileID: 344108890355790901, guid: 8ecf9450bad0744439b210dd18d4e308, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 344108890355790901, guid: 8ecf9450bad0744439b210dd18d4e308, type: 3}
       propertyPath: m_Shadows.m_Type
       value: 2
       objectReference: {fileID: 0}
@@ -50675,6 +50715,10 @@ PrefabInstance:
     - target: {fileID: 344108890355790901, guid: 8ecf9450bad0744439b210dd18d4e308, type: 3}
       propertyPath: m_SpotAngle
       value: 77.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 344108890355790901, guid: 8ecf9450bad0744439b210dd18d4e308, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 344108890355790901, guid: 8ecf9450bad0744439b210dd18d4e308, type: 3}
       propertyPath: m_Shadows.m_Type
@@ -63218,6 +63262,10 @@ PrefabInstance:
       value: 77.3
       objectReference: {fileID: 0}
     - target: {fileID: 344108890355790901, guid: 8ecf9450bad0744439b210dd18d4e308, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 344108890355790901, guid: 8ecf9450bad0744439b210dd18d4e308, type: 3}
       propertyPath: m_Shadows.m_Type
       value: 2
       objectReference: {fileID: 0}
@@ -72670,6 +72718,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 814705604}
     - target: {fileID: 8140889882999943595, guid: 6f7bcf7f2ae72674085f2765d2feeea9, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8140889882999943595, guid: 6f7bcf7f2ae72674085f2765d2feeea9, type: 3}
       propertyPath: m_Shadows.m_Type
       value: 2
       objectReference: {fileID: 0}
@@ -72756,6 +72808,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 174343078}
+    - target: {fileID: 8399672286671066707, guid: 6da5047cabce5ec419dece35730a5036, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8399672286671066707, guid: 6da5047cabce5ec419dece35730a5036, type: 3}
       propertyPath: m_Shadows.m_Type
       value: 2
@@ -72922,6 +72978,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 900807446}
+    - target: {fileID: 8140889882999943595, guid: 6f7bcf7f2ae72674085f2765d2feeea9, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8140889882999943595, guid: 6f7bcf7f2ae72674085f2765d2feeea9, type: 3}
       propertyPath: m_Shadows.m_Type
       value: 2
@@ -73143,6 +73203,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 341493879}
+    - target: {fileID: 8986203055499283578, guid: 5ca207304f0603c41adbf34eb046daee, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8986203055499283578, guid: 5ca207304f0603c41adbf34eb046daee, type: 3}
       propertyPath: m_Shadows.m_Type
       value: 2
