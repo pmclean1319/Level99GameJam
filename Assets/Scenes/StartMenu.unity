@@ -961,8 +961,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0337a35ea7827b94aade8b771455652e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPanOffset: 50
-  maxZoomOffset: 0.2
+  maxZoomOffset: 2.5
+  zoomDuration: 35
   rectTransform: {fileID: 1291160624}
 --- !u!4 &873159167
 Transform:
