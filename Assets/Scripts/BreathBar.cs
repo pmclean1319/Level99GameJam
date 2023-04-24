@@ -38,6 +38,7 @@ public class BreathBar : MonoBehaviour
         PlayerJumpScript = FindObjectOfType<PlayerJump>();
         PlayerJumpScript.Jumped += PlayerJumpScript_Jumped;
         PlayerVitalsScript.PlayerDied += () => Bar.fillAmount = 0.75f;
+        PlayerVitalsScript.PlayerDied += () => SetHasOxygen(true);
     }
 
     public void SetHasOxygen(bool oxygen)
