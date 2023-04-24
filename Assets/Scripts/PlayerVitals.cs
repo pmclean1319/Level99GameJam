@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerVitals : MonoBehaviour
 {
+
+    public Action PlayerDied;
 
     public float OxygenLevel { get; private set; }
 
@@ -19,13 +22,13 @@ public class PlayerVitals : MonoBehaviour
 
     void Start()
     {
-        if (GameObject.Find("Player")) {
-            DontDestroyOnLoad(gameObject);
-        }
+        DontDestroyOnLoad(gameObject);
+        GameState.Instance.Reset += () =>  Destroy(gameObject);
     }
 
     void TriggerPlayerDeath()
     {
-
+        PlayerDied?.Invoke();
+        GameState.Instance.ResetGame();
     }
 }
