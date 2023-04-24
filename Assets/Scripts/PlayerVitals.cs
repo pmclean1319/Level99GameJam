@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerVitals : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class PlayerVitals : MonoBehaviour
     void TriggerPlayerDeath()
     {
         PlayerDied?.Invoke();
-        GameState.Instance.ResetGame();
+        Scene scene = SceneManager.GetActiveScene();
+        OxygenLevel = 100;
+        FindObjectOfType<EntrySpawnpoint>().SpawnPlayer();
     }
 }
